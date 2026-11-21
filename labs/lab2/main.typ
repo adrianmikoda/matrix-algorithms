@@ -2,8 +2,8 @@
 #set text(font: "PT Serif", size: 12pt, lang: "pl", hyphenate: false)
 #set heading(numbering: "1.")
 #set table(stroke: 0.5pt + black, inset: (x: 10pt, y: 4pt))
-#show figure: set block(breakable: true)
-#show raw.where(block: true): it => block(fill: luma(246), inset: 7pt, radius: 3pt, width: 100%, text(size: 8pt, it))
+#show table: set text(size: 10pt)
+#show raw.where(block: true): it => block(fill: luma(246), inset: 7pt, radius: 3pt, width: 100%, text(size: 7pt, it))
 
 #align(center)[
   #text(size: 22pt)[*Algorytmy macierzowe*]
@@ -25,7 +25,7 @@ Dla losowych macierzy kwadratowych o dowolnym rozmiarze $n$ i elementach z przed
 + rekurencyjną faktoryzację LU z mnożeniem Binét'a i Strassena,
 + rekurencyjne odwracanie macierzy z mnożeniem Ladermana.
 
-Mnożenie Ladermana (punkt 4) wykonaliśmy już w zadaniu 1. Macierze mnożymy własnymi algorytmami z zadania 1 i zliczamy operacje zmiennoprzecinkowe ($+, -, times, div$).
+Mnożenie Ladermana (punkt 4) wykonaliśmy już w zadaniu 1. Macierze mnożymy własnymi algorytmami z zadania 1 i zliczamy operacje zmiennoprzecinkowe: dodawania, odejmowania, mnożenia i dzielenia.
 
 = Środowisko
 
