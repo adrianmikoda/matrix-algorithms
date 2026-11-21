@@ -226,9 +226,8 @@ Dense strassenRec(const View &a, const View &b) {
     if (r1 == 2 && c1 == 2 && r2 == 2 && c2 == 2) return strassen2x2(a, b);
     if (r1 <= 2 || c1 <= 2 || r2 <= 2 || c2 <= 2) return brutal(a, b);
 
-    int mx = max(max(r1, c1), max(r2, c2));
-    int p = nextPower(mx, 2);
-    int h = p / 2;
+    int h = (max(max(r1, c1), max(r2, c2)) + 1) / 2;
+    int p = 2 * h;
 
     View a11 = block(a, 0, h, 0, h),     a12 = block(a, 0, h, h, p);
     View a21 = block(a, h, p, 0, h),     a22 = block(a, h, p, h, p);
@@ -343,7 +342,7 @@ void runTest(const string &name, Matrix (*f)(const Matrix &, const Matrix &),
     auto stop = chrono::steady_clock::now();
     double ms = chrono::duration<double, milli>(stop - start).count();
 
-    cout << left << setw(10) << name << " | time: " << fixed << setprecision(3)
+    cout << left << setw(10) << name << " | time: " << fixed << setprecision(6)
          << setw(12) << ms << " ms";
 
     if (!verbose) {
